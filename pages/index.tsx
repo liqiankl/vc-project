@@ -24,6 +24,24 @@ const countResponses = [
   "Aren't you?",
   "Aren't you? 😑",
   "Try better at saying no.",
+  "No",
+  "Are you sure?",
+  "Really sure?",
+  "Are you positive???",
+  "Do you need 10 mins?",
+  "Fine you get 10 mins.",
+  "Just think about it.",
+  "Just think about it before clicking no.",
+  "Gosh, Manuel.",
+  "I'll give you more than 10 mins",
+  "Come on... 🥺",
+  "what's the worst that can happen?",
+  "Ok fine, I'll stop asking...",
+  "Just kidding..",
+  "Now you're just pressing no for fun.",
+  "Aren't you?",
+  "Aren't you? 😑",
+  "Try better at saying no.",
 ];
 
 export default function Home() {
@@ -36,9 +54,12 @@ export default function Home() {
     }
   };
 
+  const imageWidth = 480 - count * 20;
+  const imageHeight = 300 - count * 12;
+
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className} bg-[#FDFEFC]`}
+      className={`flex min-h-screen flex-col items-center  p-24 ${inter.className} bg-[#FDFEFC]`}
     >
       <Head>
         <title>Valentine's Day Card</title>
@@ -57,18 +78,16 @@ export default function Home() {
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex"></div>
       {!isConfirmed && (
         <>
-          <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-            <Image
-              className=" rounded-full"
-              src="/question.gif"
-              alt="Question GIF"
-              width={280}
-              height={200}
-              priority
-            />
-          </div>
+          <Image
+            className="rounded-full"
+            src="/question.gif"
+            alt="Question GIF"
+            width={imageWidth}
+            height={imageHeight}
+            priority
+          />
 
-          <h1 className="text-4xl">
+          <h1 className="text-4xl mb-8">
             <span className=" bg-transparent">Hypothetically</span> <br />
             <span className="text-black">
               Manuel Fernandes, will you be my valentine?
@@ -95,15 +114,20 @@ export default function Home() {
 
       {isConfirmed && (
         <>
-          <div className="text-4xl mb-2 text-black">
-            Waaad yay!
-            <br />
-          </div>
+          <div className="text-4xl text-black">Waaad yay!</div>
           <a
-            className="text-2xl  text-black"
+            className=" text-black"
             href="https://wa.me/+919821032203"
             rel="noopener noreferrer"
           >
+            <Image
+              className="rounded-full"
+              src="/yes.gif"
+              alt="YES GIF"
+              width={imageWidth}
+              height={imageHeight}
+              priority
+            />
             Click here to reach me
           </a>
         </>
