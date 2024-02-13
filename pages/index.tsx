@@ -124,8 +124,8 @@ export default function Home() {
               className="rounded-full"
               src="/yes.gif"
               alt="YES GIF"
-              width={imageWidth}
-              height={imageHeight}
+              width="250"
+              height="250"
               priority
             />
             Click here to reach me
